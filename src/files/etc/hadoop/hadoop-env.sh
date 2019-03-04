@@ -1,4 +1,4 @@
-JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+
 
 #
 # Licensed to the Apache Software Foundation (ASF) under one
@@ -41,6 +41,10 @@ JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 # Therefore, the vast majority (BUT NOT ALL!) of these defaults
 # are configured for substitution and not append.  If append
 # is preferable, modify this file accordingly.
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+#JAVA_HOME=/usr/lib/jvm/default-jvm
+JAVA_HOME=/usr/lib/jvm/default-java
+
 
 ###
 # Generic settings for HADOOP
@@ -51,11 +55,11 @@ JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 
 # The java implementation to use. By default, this environment
 # variable is REQUIRED on ALL platforms except OS X!
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # Location of Hadoop.  By default, Hadoop will attempt to determine
 # this location based upon its execution path.
-export HADOOP_HOME=/opt/hadoop-config
+#export HADOOP_HOME=/opt/hadoop-config
 
 # Location of Hadoop's configuration information.  i.e., where this
 # file is living. If this is not defined, Hadoop will attempt to
@@ -65,7 +69,7 @@ export HADOOP_HOME=/opt/hadoop-config
 # /etc/profile.d or equivalent.  Some options (such as
 # --config) may react strangely otherwise.
 #
-export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
+#export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
 
 # The maximum amount of heap to use (Java -Xmx).  If no unit
 # is provided, it will be converted to MB.  Daemons will
