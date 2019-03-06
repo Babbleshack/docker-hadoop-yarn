@@ -42,8 +42,7 @@
 # are configured for substitution and not append.  If append
 # is preferable, modify this file accordingly.
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-#JAVA_HOME=/usr/lib/jvm/default-jvm
-JAVA_HOME=/usr/lib/jvm/default-java
+JAVA_HOME=/usr/lib/jvm/default-jvm
 
 
 ###

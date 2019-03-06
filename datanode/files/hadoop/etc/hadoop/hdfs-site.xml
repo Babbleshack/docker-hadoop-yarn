@@ -19,7 +19,18 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://localhost:9000</value>
+    <value>hdfs://hadoop-namenode-service:9000</value>
   </property>
-
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>dfs.name.dir</name>
+    <value>file:///opt/hadoop/hdfs/namenode</value>
+  </property>
+  <property>
+    <name>dfs.data.dir</name>
+    <value>file:///opt/hadoop/hdfs/datanode</value>
+  </property>
 </configuration>

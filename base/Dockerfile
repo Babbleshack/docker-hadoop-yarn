@@ -20,6 +20,10 @@ ENV HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 ENV HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop 
 ENV JAVA_HOME=/usr/lib/jvm/default-java
 
+ENV HADOOP_DATA_NODE_DATA=${HADOOP_HOME}/hdfs/datanode
+ENV HADOOP_NAME_NODE_DATA=${HADOOP_HOME}/hdfs/namenode
+ENV HADOOP_TEMPDIR=${HADOOP_HOME}/hadooptmpdata
+
 ENV HDFS_NAMENODE_USER="root"
 ENV HDFS_DATANODE_USER="root"
 ENV HDFS_SECONDARYNAMENODE_USER="root"
@@ -39,12 +43,11 @@ RUN curl -L http://mirrors.london-do.gethosted.online/apache/hadoop/common/hadoo
     && mv -v /tmp/hadoop-${HADOOP_VERSION} ${HADOOP_HOME} \
     && mkdir -pv ${ENTRYPOINT_SCRIPT_DIR}
 
-COPY ./files/etc ${HADOOP_HOME}/etc
-COPY ./files/* ${ENTRYPOINT_SCRIPT_DIR}/
+COPY ./files/hadoop/etc ${HADOOP_HOME}/etc
+COPY ./files/init_scripts/* ${ENTRYPOINT_SCRIPT_DIR}/
 
 #Configure hadoop data dirs
-RUN mkdir -pv ${HADOOP_HOME}/hdfs/namenode \
-        && mkdir -pv ${HADOOP_HOME}/hdfs/datanode \
-        && mkdir -pv ${HADOOP_HOME}/hadooptmpdata \
+RUN mkdir -pv ${HADOOP_DATA_NODE_DATA} \
+        && mkdir -pv ${HADOOP_NAME_NODE_DATA} \
+        && mkdir -pv ${HADOOP_TEMPDIR} \
         && mkdir -pv ${ENTRYPOINT_SCRIPT_DIR}
-
