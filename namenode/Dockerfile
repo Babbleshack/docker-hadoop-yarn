@@ -1,4 +1,4 @@
-FROM babbleshack/hadoop:base
+FROM babbleshack/hadoop:base-2-9-2
 
 MAINTAINER Babbleshack <dcrl94@gmail.com> Version: 0.1
 

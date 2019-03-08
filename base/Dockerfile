@@ -2,7 +2,8 @@ FROM ubuntu:latest
 
 MAINTAINER Babbleshack <dcrl94@gmail.com> Version: 0.1
 
-ARG HADOOP_VERSION=3.2.0
+#ARG HADOOP_VERSION=3.2.0
+ARG HADOOP_VERSION=2.9.2
 ARG CLUSTER_NAME=hadoop-cluster
 
 
@@ -44,6 +45,7 @@ RUN curl -L http://mirrors.london-do.gethosted.online/apache/hadoop/common/hadoo
     && mkdir -pv ${ENTRYPOINT_SCRIPT_DIR}
 
 COPY ./files/hadoop/etc ${HADOOP_HOME}/etc
+COPY ./files/hadoop/slaves ${HADOOP_HOME}/etc/hadoop
 COPY ./files/init_scripts/* ${ENTRYPOINT_SCRIPT_DIR}/
 
 #Configure hadoop data dirs
