@@ -44,9 +44,9 @@ RUN curl -L http://mirrors.london-do.gethosted.online/apache/hadoop/common/hadoo
     && mv -v /tmp/hadoop-${HADOOP_VERSION} ${HADOOP_HOME} \
     && mkdir -pv ${ENTRYPOINT_SCRIPT_DIR}
 
-COPY ./files/hadoop/etc ${HADOOP_HOME}/etc
-COPY ./files/hadoop/slaves ${HADOOP_HOME}/etc/hadoop
+COPY ./files/hadoop/* ${HADOOP_HOME}/etc/hadoop/
 COPY ./files/init_scripts/* ${ENTRYPOINT_SCRIPT_DIR}/
+COPY ./files/ssh/ssh_config /etc/ssh/
 
 #Configure hadoop data dirs
 RUN mkdir -pv ${HADOOP_DATA_NODE_DATA} \
