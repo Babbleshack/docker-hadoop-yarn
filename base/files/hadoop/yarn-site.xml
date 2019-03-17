@@ -29,6 +29,19 @@
 	  <name>yarn.resourcemanager.resource-tracker.address</name>
 	  <value>hadoop-namenode-0.hadoop-namenode-service:8031</value>
   </property>
+  <property>
+	  <name>mapreduce.jobhistory.address</name>
+	  <value>hadoop-namenode-0.hadoop-namenode-service:10020</value>
+  </property>
+  <property>
+	  <name>mapreduce.jobhistory.webapp.address</name>
+	  <value>hadoop-namenode-0.hadoop-namenode-service:19888</value>
+  </property>
+  <property>
+	  <name>yarn.nodemanager.aux-services</name>
+	  <value>mapreduce_shuffle</value>
+  </property>
+
 
 
 <!-- Site specific YARN configuration properties -->
