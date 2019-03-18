@@ -38,8 +38,24 @@
 	  <value>hadoop-namenode-0.hadoop-namenode-service:19888</value>
   </property>
   <property>
+	  <name>yarn.log.server.url</name>
+	  <value>http://hadoop-namenode-0.hadoop-namenode-service:8188/jobhistory/logs</value>
+  </property>
+  <property>
 	  <name>yarn.nodemanager.aux-services</name>
 	  <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+	  <name>yarn.log-aggregation-enable</name>
+	  <value>true</value>
+  </property>
+  <property>
+	  <name>yarn.nodemanager.remote-app-log-dir</name>
+	  <value>/app-logs</value>
+  </property>
+  <property>
+	  <name>yarn.nodemanager.remote-app-log-dir-suffix</name>
+	  <value>logs</value>
   </property>
 
 
