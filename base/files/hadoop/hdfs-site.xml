@@ -19,8 +19,8 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://hadoop-namenode-0.hadoop-namenode-service:9000</value>
-    <!--<value>hdfs://hadoop-namenode-service:9000</value>-->
+    <value>hdfs://hadoop-master-0.hadoop-master-service:9000</value>
+    <!--<value>hdfs://hadoop-master-service:9000</value>-->
   </property>
   <property>
     <name>dfs.replication</name>
@@ -28,14 +28,14 @@
   </property>
   <property>
     <name>dfs.name.dir</name>
-    <value>file:///opt/hadoop/hdfs/namenode</value>
+    <value>file:///opt/hadoop/hdfs/master</value>
   </property>
   <property>
     <name>dfs.data.dir</name>
     <value>file:///opt/hadoop/hdfs/datanode</value>
   </property>
   <property>
-    <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
+    <name>dfs.master.datanode.registration.ip-hostname-check</name>
     <value>false</value>
   </property>
 </configuration>

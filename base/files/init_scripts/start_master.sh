@@ -6,7 +6,9 @@ rm -rf $HADOOP_HOME/hadooptmpdata/*
 $HADOOP_HOME/bin/hdfs namenode -format
 $HADOOP_HOME/sbin/start-dfs.sh
 $HADOOP_HOME/sbin/start-yarn.sh
+$HADOOP_HOME/sbin/mr-jobhistory-daemon.sh start historyserver
 while true
 do
-	tail -f $HADOOP_HOME/logs/hadoop-*-namenode-*.log
+	tail -f $HADOOP_HOME/logs/*.log
+  sleep 5
 done

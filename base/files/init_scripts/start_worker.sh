@@ -3,4 +3,10 @@ rm -rf $HADOOP_HOME/hdfs/namenode/*
 rm -rf $HADOOP_HOME/hdfs/datanode/*
 rm -rf $HADOOP_HOME/hadooptmpdata/*
 /etc/init.d/ssh start
-while true; do sleep 10000; done
+$HADOOP_HOME/bin/hdfs datanode &
+$HADOOP_HOME/bin/yarn nodemanager &
+while true
+do
+  tail -f $HADOOP_HOME/logs/*.log 
+  sleep 5
+done
