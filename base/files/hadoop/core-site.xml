@@ -19,8 +19,7 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://hadoop-master-0.hadoop-master-service:9000</value>
-    <!--<value>hdfs://hadoop-master-service:9000</value>-->
+    <value>hdfs://hdfs-master-0.hdfs-service.hdfs:9000</value>
   </property>
   <property>
     <name>hadoop.tmp.dir</name>

@@ -19,7 +19,7 @@ ENV HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 ENV PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 ENV HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 ENV HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop 
-ENV JAVA_HOME=/usr/lib/jvm/default-java
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 ENV HADOOP_DATA_NODE_DATA=${HADOOP_HOME}/hdfs/datanode
 ENV HADOOP_NAME_NODE_DATA=${HADOOP_HOME}/hdfs/namenode
@@ -31,7 +31,7 @@ ENV HDFS_SECONDARYNAMENODE_USER="root"
 ENV YARN_RESOURCEMANAGER_USER="root"
 ENV YARN_NODEMANAGER_USER="root"
 
-RUN apt update && apt install -y bash vim default-jre openssh-server openssh-client curl 
+RUN apt update && apt install -y bash vim openjdk-8-jdk-headless openssh-server openssh-client curl 
 
 # passwordless ssh, update to use pregenerated keys.
 RUN rm -rf /etc/ssh/ssh_host_dsa_key && ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key 
