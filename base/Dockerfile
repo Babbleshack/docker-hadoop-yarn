@@ -2,12 +2,15 @@ FROM ubuntu:latest
 
 MAINTAINER Babbleshack <dcrl94@gmail.com> Version: 0.1
 
-ARG HADOOP_VERSION=3.1.2
-ARG CLUSTER_NAME=hadoop-cluster
+ARG HADOOP_VERSION_ARG=3.1.2
+ARG CLUSTER_NAME_ARG=hadoop-cluster
 
+ENV HADOOP_VERSION=$HADOOP_VERSION_ARG
+ENV CLUSTER_NAME=$CLUSTER_NAME_ARG
 
 ENV ENTRYPOINT_SCRIPT_DIR=/opt/init_container.d
 
+ENV MAPRED_EXAMPLES=/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-$HADOOP_VERSION.jar
 ENV HADOOP_HOME=/opt/hadoop
 ENV HADOOP_INSTALL=$HADOOP_HOME
 ENV HADOOP_MAPRED_HOME=$HADOOP_HOME
@@ -55,4 +58,4 @@ RUN mkdir -pv ${HADOOP_DATA_NODE_DATA} \
         && mkdir -pv ${HADOOP_TEMPDIR} \
         && mkdir -pv ${ENTRYPOINT_SCRIPT_DIR}
 
-ENV MAPRED_EXAMPLES=/opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.9.2.jar
+
