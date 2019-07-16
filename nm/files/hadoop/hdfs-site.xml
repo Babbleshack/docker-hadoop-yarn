@@ -22,6 +22,10 @@
     <value>hdfs://hdfs-master-0.hdfs-service.hdfs:9000</value>
   </property>
   <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <property>
     <name>dfs.name.dir</name>
     <value>file:///opt/hadoop/hdfs/master</value>
   </property>

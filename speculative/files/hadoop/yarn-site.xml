@@ -72,63 +72,6 @@
     <value>-Xmx5734m</value>
   </property>
 
-  <!--Timeline server -->
-  <property>
-    <name>yarn.timeline-service.enabled</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.system-metrics-publisher.enabled</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.timeline-service.generic-application-history.enabled</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.timeline-service.bind-host</name>
-    <value>0.0.0.0</value>
-  </property>
-
-
-  <!--CGROUPS-->
-  <!--
-  <property>
-    <name>yarn.nodemanager.continer-executor.class</name>
-    <value>org.apache.hadoop.yarn.server.nodemanager.LinuxContainerExecutor</value>
-  </property>
-	<property>
-		<name>yarn.nodemanager.linux-container-executor.group</name>
-		<value>mapr</value>
-	</property>
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.resources-handler.class</name>
-    <value>org.apache.hadoop.yarn.server.nodemanager.util.CgroupsLCEResourcesHandler</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.cgroups.hierarchy</name>
-    <value>/hadoop-yarn-cgroups</value>
-  </property> 
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.cgroups.mount</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.cgroups.mount-path</name>
-    <value>/mycgroup</value>
-  </property>
-
-  <property>
-    <name>yarn.nodemanager.resource.percentage-physical-cpu-limit</name>
-    <value>25</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.cgroups.strict-resource-usage</name>
-    <value>true</value>
-  </property>
--->
-
-
   
   
   <!--YARN-MASTER

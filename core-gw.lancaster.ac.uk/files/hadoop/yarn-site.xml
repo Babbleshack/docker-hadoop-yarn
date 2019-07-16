@@ -72,25 +72,6 @@
     <value>-Xmx5734m</value>
   </property>
 
-  <!--Timeline server -->
-  <property>
-    <name>yarn.timeline-service.enabled</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.system-metrics-publisher.enabled</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.timeline-service.generic-application-history.enabled</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.timeline-service.bind-host</name>
-    <value>0.0.0.0</value>
-  </property>
-
-
   <!--CGROUPS-->
   <!--
   <property>

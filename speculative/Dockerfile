@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 MAINTAINER Babbleshack <dcrl94@gmail.com> Version: 0.1
 
-ARG HADOOP_VERSION=3.1.2
+ARG HADOOP_VERSION=2.9.2
 ARG CLUSTER_NAME=hadoop-cluster
 
 
@@ -31,7 +31,7 @@ ENV YARN_RESOURCEMANAGER_USER="root"
 ENV YARN_NODEMANAGER_USER="root"
 ENV YARN_EXAMPLES=${HADOOP_HOME}/share/hadoop/mapreduce
 
-RUN apt update && apt install -y bash vim openjdk-8-jdk-headless openssh-server openssh-client curl libcgroup1 
+RUN apt update && apt install -y bash vim openjdk-8-jdk-headless openssh-server openssh-client curl 
 
 # passwordless ssh, update to use pregenerated keys.
 RUN rm -rf /etc/ssh/ssh_host_dsa_key && ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key 
