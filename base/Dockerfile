@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 MAINTAINER Babbleshack <dcrl94@gmail.com> Version: 0.1
 
-ARG HADOOP_VERSION_ARG=3.1.2
+ARG HADOOP_VERSION_ARG=2.9.2
 ARG CLUSTER_NAME_ARG=hadoop-cluster
 
 ENV HADOOP_VERSION=$HADOOP_VERSION_ARG

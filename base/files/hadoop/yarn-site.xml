@@ -49,6 +49,13 @@
     <name>yarn.nodemanager.opportunistic-containers-max-queue-length</name>
     <value>10</value>
   </property>
+  <!--disable virtual memory-->
+  <property>
+    <name>yarn.nodemanager.vmem-pmem-ratio</name>
+    <value>1.1</value>
+  </property>
+ 
+
   <!-- Worker(memory)=8GB, Node(mem)=6GB, Container(mem)=[1,2]GB-->
   <property>
     <name>yarn.nodemanager.resource.memory-mb</name>

@@ -21,6 +21,15 @@
     <name>mapreduce.framework.name</name>
     <value>yarn</value>
   </property>
+  <!-- Maps can use 3.5GB mem, reduces 7Gb -->
+  <property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>3584</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>7168</value>
+  </property>
   <property>
     <name>mapreduce.map.java.opts</name>
     <value>-Xmx2867m</value>

@@ -3,6 +3,7 @@ rm -rf $HADOOP_HOME/hdfs/namenode/*
 rm -rf $HADOOP_HOME/hdfs/datanode/*
 rm -rf $HADOOP_HOME/hadooptmpdata/*
 ln --symbolic --force --verbose /opt/hadoop-kuber-conf/slaves opt/hadoop/etc/hadoop/slaves
+ln --symbolic --force --verbose /opt/hadoop-kuber-conf/slaves opt/hadoop/etc/hadoop/workers
 sed -i 's/<!--YARN-MASTER//' $HADOOP_CONF_DIR/yarn-site.xml
 sed -i 's/YARN-MASTER-->//' $HADOOP_CONF_DIR/yarn-site.xml
 /etc/init.d/ssh start
