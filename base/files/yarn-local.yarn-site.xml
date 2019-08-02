@@ -18,6 +18,10 @@
     <value>mapreduce_shuffle</value>
   </property>
   <property>
+	  <name>yarn.resourcemanager.webapp.address</name>
+	  <value>0.0.0.0:8088</value>
+  </property>
+  <property>
 	  <name>yarn.resourcemanager.address</name>
 	  <value>yarn-master-0.yarn-service.yarn:8032</value>
   </property>
@@ -26,10 +30,9 @@
           <value>yarn-master-0.yarn-service</value>
   </property>
   <property>
-          <name>yarn.resourcemanager.webapp.address</name>
-          <value>0.0.0.0:8088</value>
+	  <name>yarn.resourcemanager.scheduler.address</name>
+	  <value>localhost:8049</value>
   </property>
-
   <property>
     <name>yarn.webapp.ui2.enable</name>
     <value>true</value>
@@ -62,12 +65,16 @@
     <name>yarn.nodemanager.amrmproxy.enabled</name>
     <value>true</value>
   </property>
-  <property>
-	  <name>yarn.nodemanager.resource.detect-hardware-capabilities</name>
-	  <value>true</value>
-  </property>
 
-  <!-- Worker(memory)=8GB, Node(mem)=7GB, Container(mem)=[3,7]GB-->
+  <!--disable virtual memory-->
+  <!--
+  <property>
+    <name>yarn.nodemanager.vmem-pmem-ratio</name>
+    <value>1.1</value>
+  </property>
+  -->
+
+  <!-- Worker(memory)=8GB, Node(mem)=6GB, Container(mem)=[1,2]GB-->
   <property>
     <name>yarn.nodemanager.resource.memory-mb</name>
     <value>7168</value>
@@ -80,29 +87,20 @@
     <name>yarn.scheduler.maximum-allocation-mb</name>
     <value>7168</value>
   </property>
-  <!-- NOT NEEDED IN HADOOP 3.1.2
   <property>
     <name>yarn.app.mapreduce.am.resource.mb</name>
     <value>7168</value>
   </property>
+  <!--AM 80% of mapred container-->
   <property>
     <name>yarn.app.mapreduce.am.command-opts</name>
     <value>-Xmx5734m</value>
   </property>
-  -->
 
   <!--Timeline server -->
   <property>
     <name>yarn.timeline-service.enabled</name>
     <value>true</value>
-  </property>
-  <property>
-	  <name>yarn.timeline-service.hostname</name>
-	  <value>yarn-master-0.yarn-service</value>
-  </property>
-  <property>
-	  <name>yarn.timeline-service.webapp.address</name>
-	  <value>0.0.0.0:8188</value>
   </property>
   <property>
     <name>yarn.resourcemanager.system-metrics-publisher.enabled</name>
@@ -114,8 +112,55 @@
   </property>
   <property>
     <name>yarn.timeline-service.bind-host</name>
-    <value>0.0.0.0</value>
+    <value>yarn-master-0.yarn-service.yarn</value>
   </property>
+
+
+
+
+  <!--CGROUPS-->
+  <!--
+  <property>
+    <name>yarn.nodemanager.continer-executor.class</name>
+    <value>org.apache.hadoop.yarn.server.nodemanager.LinuxContainerExecutor</value>
+  </property>
+	<property>
+		<name>yarn.nodemanager.linux-container-executor.group</name>
+		<value>mapr</value>
+	</property>
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.resources-handler.class</name>
+    <value>org.apache.hadoop.yarn.server.nodemanager.util.CgroupsLCEResourcesHandler</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.cgroups.hierarchy</name>
+    <value>/hadoop-yarn-cgroups</value>
+  </property> 
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.cgroups.mount</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.cgroups.mount-path</name>
+    <value>/mycgroup</value>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.resource.percentage-physical-cpu-limit</name>
+    <value>25</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.linux-container-executor.cgroups.strict-resource-usage</name>
+    <value>true</value>
+  </property>
+-->
+
+
+  
+  
+
+
+
 <!-- Site specific YARN configuration properties -->
 
 </configuration>

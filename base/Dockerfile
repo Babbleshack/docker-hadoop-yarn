@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 MAINTAINER Babbleshack <dcrl94@gmail.com> Version: 0.1
 
-ARG HADOOP_VERSION_ARG=2.9.2
+ARG HADOOP_VERSION_ARG=3.1.2
 ARG CLUSTER_NAME_ARG=hadoop-cluster
 
 ENV HADOOP_VERSION=$HADOOP_VERSION_ARG
@@ -51,17 +51,22 @@ RUN curl -L http://mirrors.ukfast.co.uk/sites/ftp.apache.org/hadoop/common/hadoo
     && tar xzfv /tmp/hadoop.tar.gz -C /tmp/ \
     && mv -v /tmp/hadoop-${HADOOP_VERSION} ${HADOOP_HOME} \
     && mkdir -pv ${ENTRYPOINT_SCRIPT_DIR} \
-    && mkdir -pv ${HELPER_SCRIPTS_DIR}
+    && mkdir -pv ${HELPER_SCRIPTS_DIR} \
+    && mkdir -pv /opt/yarn-conf/hadoop
 
 COPY ./files/hadoop/* ${HADOOP_HOME}/etc/hadoop/
 COPY ./files/init_scripts/* ${ENTRYPOINT_SCRIPT_DIR}/
 COPY ./files/ssh/ssh_config /etc/ssh/
 copy ./files/scripts/* ${HELPER_SCRIPTS_DIR}/
+copy ./files/yarn-local.yarn-site.xml /opt/yarn-conf/hadoop/yarn-site.xml
 
 #Configure hadoop data dirs
 RUN mkdir -pv ${HADOOP_DATA_NODE_DATA} \
         && mkdir -pv ${HADOOP_NAME_NODE_DATA} \
         && mkdir -pv ${HADOOP_TEMPDIR} \
-        && mkdir -pv ${ENTRYPOINT_SCRIPT_DIR}
+        && mkdir -pv ${ENTRYPOINT_SCRIPT_DIR} \
+	&& mkdir -pv /yarn-conf \
+	&& cp -rfv /opt/hadoop/etc/hadoop /yarn-conf \
+	&& cp -rfv /opt/yarn-conf/* /yarn-conf 
 
 

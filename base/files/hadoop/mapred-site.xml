@@ -21,7 +21,7 @@
     <name>mapreduce.framework.name</name>
     <value>yarn</value>
   </property>
-  <!-- Maps can use 3.5GB mem, reduces 7Gb -->
+  <!-- Maps can use 3GB mem, reduces 6.5Gb -->
   <property>
     <name>mapreduce.map.memory.mb</name>
     <value>3584</value>
@@ -31,6 +31,11 @@
     <value>7168</value>
   </property>
   <property>
+    <name>mapreduce.job.reducer.unconditional-preempt.delay.sec</name>
+    <value>-1</value>
+  </property>
+  <!--
+  <property>
     <name>mapreduce.map.java.opts</name>
     <value>-Xmx2867m</value>
   </property>
@@ -38,6 +43,7 @@
     <name>mapreduce.reduce.java.opts</name>
     <value>-Xmx5734m</value>
   </property>
+  -->
   <property>
     <name>yarn.app.mapreduce.am.env</name>
     <value>HADOOP_MAPRED_HOME=${HADOOP_HOME:-"/opt/hadoop"}</value>
