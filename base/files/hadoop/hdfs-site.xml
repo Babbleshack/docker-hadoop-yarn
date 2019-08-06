@@ -31,6 +31,6 @@
   </property>
   <property>
     <name>dfs.master.datanode.registration.ip-hostname-check</name>
-    <value>false</value>
+    <value>true</value>
   </property>
 </configuration>

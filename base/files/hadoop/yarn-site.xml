@@ -29,7 +29,6 @@
           <name>yarn.resourcemanager.webapp.address</name>
           <value>0.0.0.0:8088</value>
   </property>
-
   <property>
     <name>yarn.webapp.ui2.enable</name>
     <value>true</value>
@@ -80,17 +79,6 @@
     <name>yarn.scheduler.maximum-allocation-mb</name>
     <value>7168</value>
   </property>
-  <!-- NOT NEEDED IN HADOOP 3.1.2
-  <property>
-    <name>yarn.app.mapreduce.am.resource.mb</name>
-    <value>7168</value>
-  </property>
-  <property>
-    <name>yarn.app.mapreduce.am.command-opts</name>
-    <value>-Xmx5734m</value>
-  </property>
-  -->
-
   <!--Timeline server -->
   <property>
     <name>yarn.timeline-service.enabled</name>
@@ -117,5 +105,4 @@
     <value>0.0.0.0</value>
   </property>
 <!-- Site specific YARN configuration properties -->
-
 </configuration>
