@@ -22,8 +22,16 @@
 	  <value>yarn-master-0.yarn-service.yarn:8032</value>
   </property>
   <property>
+	  <name>yarn.resourcemanager.webapp.address</name>
+	  <value>0.0.0.0:8088</value>
+  </property>
+  <property>
 	  <name>yarn.resourcemanager.scheduler.address</name>
 	  <value>yarn-master-0.yarn-service.yarn:8030</value>
+  </property>
+  <property>
+	  <name>yarn.resourcemanager.hostname</name>
+	  <value>yarn-master-0</value>
   </property>
   <property>
     <name>yarn.webapp.ui2.enable</name>
@@ -49,14 +57,6 @@
     <name>yarn.nodemanager.opportunistic-containers-max-queue-length</name>
     <value>10</value>
   </property>
-  <!--disable virtual memory-->
-  <!--
-  <property>
-    <name>yarn.nodemanager.vmem-pmem-ratio</name>
-    <value>1.1</value>
-  </property>
-  -->
-
   <!-- Worker(memory)=8GB, Node(mem)=6GB, Container(mem)=[1,2]GB-->
   <property>
     <name>yarn.nodemanager.resource.memory-mb</name>
@@ -97,60 +97,5 @@
     <name>yarn.timeline-service.bind-host</name>
     <value>0.0.0.0</value>
   </property>
-
-
-  <!--CGROUPS-->
-  <!--
-  <property>
-    <name>yarn.nodemanager.continer-executor.class</name>
-    <value>org.apache.hadoop.yarn.server.nodemanager.LinuxContainerExecutor</value>
-  </property>
-	<property>
-		<name>yarn.nodemanager.linux-container-executor.group</name>
-		<value>mapr</value>
-	</property>
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.resources-handler.class</name>
-    <value>org.apache.hadoop.yarn.server.nodemanager.util.CgroupsLCEResourcesHandler</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.cgroups.hierarchy</name>
-    <value>/hadoop-yarn-cgroups</value>
-  </property> 
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.cgroups.mount</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.cgroups.mount-path</name>
-    <value>/mycgroup</value>
-  </property>
-
-  <property>
-    <name>yarn.nodemanager.resource.percentage-physical-cpu-limit</name>
-    <value>25</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.linux-container-executor.cgroups.strict-resource-usage</name>
-    <value>true</value>
-  </property>
--->
-
-
-  
-  
-  <!--YARN-MASTER
-  <property>
-    <name>yarn.nodemanager.distributed-scheduling.enabled</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.amrmproxy.enabled</name>
-    <value>true</value>
-  </property>
-  YARN-MASTER-->
-
-
 <!-- Site specific YARN configuration properties -->
-
 </configuration>
