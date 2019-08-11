@@ -51,8 +51,9 @@
   </property>
   <property>
     <name>yarn.nodemanager.opportunistic-containers-max-queue-length</name>
-    <value>10</value>
+    <value>2</value>
   </property>
+  <!--
   <property>
     <name>yarn.nodemanager.distributed-scheduling.enabled</name>
     <value>true</value>
@@ -61,11 +62,11 @@
     <name>yarn.nodemanager.amrmproxy.enabled</name>
     <value>true</value>
   </property>
+  -->
   <property>
 	  <name>yarn.nodemanager.resource.detect-hardware-capabilities</name>
 	  <value>true</value>
   </property>
-
   <!-- Worker(memory)=8GB, Node(mem)=7GB, Container(mem)=[3,7]GB-->
   <property>
     <name>yarn.nodemanager.resource.memory-mb</name>
